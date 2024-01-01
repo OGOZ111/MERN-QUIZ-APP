@@ -3,7 +3,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 // Import components
 import { MainMenu } from "./MainMenu";
-import { Quiz } from "./Quiz";
+import Quiz from "./Quiz";
 import { Result } from "./Result";
 
 //React Routes

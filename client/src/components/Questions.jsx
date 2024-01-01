@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from "react";
 import data from "../database/data";
+import { useSelector } from "react-redux";
 
-export const Questions = () => {
+// Custom hook
+import { useFetchQuestion } from "../hooks/FetchQuestion";
+
+export default function Questions() {
   const [checked, setChecked] = useState(undefined);
-
+  const [{ isLoading, apiData, serverError }] = useFetchQuestion();
   const question = data[0];
 
+  const { questions } = useSelector((state) => state);
+
   useEffect(() => {
-    console.log(question);
+    console.log(questions);
   });
 
   function onSelect() {
@@ -38,4 +44,4 @@ export const Questions = () => {
       </ul>
     </div>
   );
-};
+}
