@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import data from "../database/data";
 
 export const Questions = () => {
   const [checked, setChecked] = useState(undefined);
+
+  useEffect(() => {
+    console.log(data);
+  });
 
   function onSelect() {
     console.log("radio button changed");
