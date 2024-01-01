@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
+import "../styles/MainMenu.css";
 
 export const MainMenu = () => {
   const inputRef = useRef(null);
@@ -18,7 +19,12 @@ export const MainMenu = () => {
         <li>The result will be declared at the end of the quiz.</li>
       </ol>
       <form id="form">
-        <input ref={inputRef} type="text" placeholder="Enter username" />
+        <input
+          ref={inputRef}
+          className="userid"
+          type="text"
+          placeholder="Enter username"
+        />
       </form>
 
       <div className="start">
