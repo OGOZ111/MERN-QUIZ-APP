@@ -16,7 +16,7 @@ export const Questions = () => {
 
   return (
     <div className="questions">
-      <h2 className="text-light">Simple Question 1</h2>
+      <h2 className="text-light">{question.question}</h2>
 
       <ul key={question.id}>
         {question.options.map((q, i) => (
@@ -32,7 +32,7 @@ export const Questions = () => {
             <label className="text-primary" htmlFor={`q${i}-option`}>
               {q}
             </label>
-            <div className="check checked"></div>
+            <div className="check "></div>
           </li>
         ))}
       </ul>
