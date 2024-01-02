@@ -6,7 +6,7 @@ export const questionReducer = createSlice({
   initialState: {
     queue: [],
     answers: [],
-    trace: 0,
+    trace: 0, // this value changes the index of the questions in the array
   },
   reducers: {
     startExamAction: (state, action) => {
@@ -16,9 +16,25 @@ export const questionReducer = createSlice({
         queue: action.payload,
       };
     },
+
+    // following function updates the trace value for the index of the questions in array
+    moveNextAction: (state) => {
+      return {
+        ...state,
+        trace: state.trace + 1,
+      };
+    },
+
+    movePrevAction: (state) => {
+      return {
+        ...state,
+        trace: state.trace - 1,
+      };
+    },
   },
 });
 
-export const { startExamAction } = questionReducer.actions;
+export const { startExamAction, moveNextAction, movePrevAction } =
+  questionReducer.actions;
 
 export default questionReducer.reducer;

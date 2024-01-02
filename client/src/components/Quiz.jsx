@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
 import Questions from "./Questions";
+import { MoveNextQuestion, MovePrevQuestion } from "../hooks/FetchQuestion";
 
 //redux store import
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 export default function Quiz() {
-  const state = useSelector((state) => state);
+  const state = useSelector((state) => state.questions.trace);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     console.log(state);
@@ -15,10 +17,13 @@ export default function Quiz() {
   //Button event handler for next and prev buttons
   function onNext() {
     console.log("button working");
+    // Update the trace value by +1, which moves to the next index in the array of questions using move next action
+    dispatch(MoveNextQuestion());
   }
 
   function onPrev() {
     console.log("button working");
+    dispatch(MovePrevQuestion());
   }
 
   return (
