@@ -2,9 +2,18 @@ import React from "react";
 import "../styles/Result.css";
 import { Link } from "react-router-dom";
 import { ResultTable } from "./ResultTable";
+import { useDispatch } from "react-redux";
+// import actions to reset values for restart game
+
+import { resetAllAction } from "../redux/question_reducer";
+import { resetResultAction } from "../redux/result_reducer";
 
 export const Result = () => {
+  const dispatch = useDispatch();
+
   function onRestart() {
+    dispatch(resetAllAction());
+    dispatch(resetResultAction());
     console.log("restarted");
   }
   return (
