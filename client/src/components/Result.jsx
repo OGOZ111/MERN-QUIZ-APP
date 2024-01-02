@@ -44,19 +44,19 @@ export const Result = () => {
         </div>
         <div className="flex">
           <span>Total Quiz Points: </span>
-          <span className="bold">50</span>
+          <span className="bold">{totalPoints || 0}</span>
         </div>
         <div className="flex">
           <span>Total Questions: </span>
-          <span className="bold">05</span>
+          <span className="bold">{queue.length || 0}</span>
         </div>
         <div className="flex">
           <span>Total attempts: </span>
-          <span className="bold">03</span>
+          <span className="bold">{attempts || 0}</span>
         </div>
         <div className="flex">
           <span>Total Earned Points:</span>
-          <span className="bold">30</span>
+          <span className="bold">{earnPoints || 0}</span>
         </div>
         <div className="flex">
           <span>Quiz Result</span>
