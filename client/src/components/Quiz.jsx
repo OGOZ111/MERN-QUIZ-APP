@@ -24,7 +24,11 @@ export default function Quiz() {
     if (trace < queue.length) {
       // Update the trace value by +1, which moves to the next index in the array of questions using move next action
       dispatch(MoveNextQuestion());
-      dispatch(PushAnswer(check));
+
+      // insert a new result in the array
+      if (result.length <= trace) {
+        dispatch(PushAnswer(check));
+      }
     }
   }
 
