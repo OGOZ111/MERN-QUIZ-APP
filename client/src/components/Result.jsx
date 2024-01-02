@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { resetAllAction } from "../redux/question_reducer";
 import { resetResultAction } from "../redux/result_reducer";
 import { attempts_Number } from "../helper/helper";
-import { earnPoints_Number } from "../helper/helper";
+import { earnPoints_Number, flagResult } from "../helper/helper";
 
 export const Result = () => {
   const dispatch = useDispatch();
@@ -18,14 +18,15 @@ export const Result = () => {
   } = useSelector((state) => state);
 
   useEffect(() => {
-    console.log(earnPoints);
+    console.log(flag);
   });
 
   const totalPoints = queue.length * 10;
 
   const attempts = attempts_Number(result);
 
-  const earnPoints = earnPoints_Number(result, answers);
+  const earnPoints = earnPoints_Number(result, answers, 10);
+  const flag = flagResult(totalPoints, earnPoints);
 
   function onRestart() {
     dispatch(resetAllAction());
@@ -59,7 +60,12 @@ export const Result = () => {
         </div>
         <div className="flex">
           <span>Quiz Result</span>
-          <span className="bold">Passed</span>
+          <span
+            style={{ color: `${flag ? "#2aff95" : "#ff2a66"}` }}
+            className="bold"
+          >
+            {flag ? "Passed" : "Failed"}
+          </span>
         </div>
       </div>
       <div className="start">

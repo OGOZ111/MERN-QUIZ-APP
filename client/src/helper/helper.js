@@ -9,3 +9,7 @@ export function earnPoints_Number(result, answers, point) {
     .map((i) => point)
     .reduce((prev, curr) => prev + curr, 0);
 }
+
+export function flagResult(totalPoints, earnPoints) {
+  return (totalPoints * 50) / 100 < earnPoints; /** earn 50% marks */
+}
