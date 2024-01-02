@@ -7,6 +7,8 @@ import { useDispatch, useSelector } from "react-redux";
 
 import { resetAllAction } from "../redux/question_reducer";
 import { resetResultAction } from "../redux/result_reducer";
+import { attempts_Number } from "../helper/helper";
+import { earnPoints_Number } from "../helper/helper";
 
 export const Result = () => {
   const dispatch = useDispatch();
@@ -16,12 +18,14 @@ export const Result = () => {
   } = useSelector((state) => state);
 
   useEffect(() => {
-    console.log(result);
+    console.log(earnPoints);
   });
 
   const totalPoints = queue.length * 10;
 
-  //const attempt =
+  const attempts = attempts_Number(result);
+
+  const earnPoints = earnPoints_Number(result, answers);
 
   function onRestart() {
     dispatch(resetAllAction());
