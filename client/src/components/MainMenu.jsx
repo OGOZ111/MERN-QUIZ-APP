@@ -1,9 +1,19 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import "../styles/MainMenu.css";
+import { useDispatch } from "react-redux";
+import { setUserId } from "../redux/result_reducer";
 
 export const MainMenu = () => {
   const inputRef = useRef(null);
+
+  const dispatch = useDispatch();
+
+  function startQuiz() {
+    if (inputRef.current?.value) {
+      dispatch(setUserId(inputRef.current?.value));
+    }
+  }
 
   return (
     <div className="container">
@@ -28,7 +38,7 @@ export const MainMenu = () => {
       </form>
 
       <div className="start">
-        <Link className="btn" to={"quiz"}>
+        <Link onClick={startQuiz} className="btn" to={"quiz"}>
           Start Quiz
         </Link>
       </div>
