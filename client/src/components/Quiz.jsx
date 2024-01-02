@@ -7,11 +7,11 @@ import { MoveNextQuestion, MovePrevQuestion } from "../hooks/FetchQuestion";
 import { useSelector, useDispatch } from "react-redux";
 
 export default function Quiz() {
-  const state = useSelector((state) => state.questions.trace);
+  const trace = useSelector((state) => state.questions.trace);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(state);
+    console.log(trace);
   });
 
   //Button event handler for next and prev buttons
@@ -22,8 +22,10 @@ export default function Quiz() {
   }
 
   function onPrev() {
+    if (trace > 0) {
+      dispatch(MovePrevQuestion());
+    }
     console.log("button working");
-    dispatch(MovePrevQuestion());
   }
 
   return (
