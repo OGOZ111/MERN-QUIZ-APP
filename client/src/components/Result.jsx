@@ -1,8 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/Result.css";
 import { Link } from "react-router-dom";
 import { ResultTable } from "./ResultTable";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import actions to reset values for restart game
 
 import { resetAllAction } from "../redux/question_reducer";
@@ -10,6 +10,18 @@ import { resetResultAction } from "../redux/result_reducer";
 
 export const Result = () => {
   const dispatch = useDispatch();
+  const {
+    questions: { queue, answers },
+    result: { result, userId },
+  } = useSelector((state) => state);
+
+  useEffect(() => {
+    console.log(result);
+  });
+
+  const totalPoints = queue.length * 10;
+
+  //const attempt =
 
   function onRestart() {
     dispatch(resetAllAction());

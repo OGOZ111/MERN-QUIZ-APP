@@ -30,6 +30,9 @@ export default function Quiz() {
         dispatch(PushAnswer(check));
       }
     }
+
+    //reset value of the checked value
+    setChecked(undefined);
   }
 
   function onPrev() {
