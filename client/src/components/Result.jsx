@@ -18,7 +18,7 @@ export const Result = () => {
   } = useSelector((state) => state);
 
   useEffect(() => {
-    console.log(flag);
+    //console.log(flag);
   });
 
   const totalPoints = queue.length * 10;
@@ -40,7 +40,7 @@ export const Result = () => {
       <div className="result flex-center">
         <div className="flex">
           <span>Username</span>
-          <span className="bold">Luke</span>
+          <span className="bold">{userId || ""}</span>
         </div>
         <div className="flex">
           <span>Total Quiz Points: </span>
