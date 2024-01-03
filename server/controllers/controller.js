@@ -40,17 +40,45 @@ export async function dropQuestions(req, res) {
 
 // get all results
 export async function getResult(req, res) {
-  res.json("results API get request");
+  try {
+    const r = await Results.find();
+    res.json(r);
+  } catch (error) {
+    res.json({ error });
+  }
 }
 
 // post all results
 
 export async function storeResult(req, res) {
-  res.json("result api post request");
+  try {
+    const { username, result, attempts, points, achieved } = req.body;
+    if (!username && !result) {
+      throw new Error("Data Not Provided...!");
+    }
+
+    const data = await Results.create({
+      username,
+      result,
+      attempts,
+      points,
+      achieved,
+    });
+
+    res.json({ msg: "Result Saved Successfully...!", data });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ error: "Internal Server Error" });
+  }
 }
 
 // delete all results
 
 export async function dropResult(req, res) {
-  res.json("results API delete request");
+  try {
+    await Results.deleteMany();
+    res.json({ msg: "Result Deleted Successfully...!" });
+  } catch (error) {
+    res.json({ error });
+  }
 }
