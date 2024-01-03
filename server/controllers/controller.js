@@ -14,3 +14,20 @@ export async function insertQuestions(req, res) {
 export async function dropQuestions(req, res) {
   res.json("Questions api delete request");
 }
+
+// get all results
+export async function getResult(req, res) {
+  res.json("results API get request");
+}
+
+// post all results
+
+export async function storeResult(req, res) {
+  res.json("result api post request");
+}
+
+// delete all results
+
+export async function dropResult(req, res) {
+  res.json("results API delete request");
+}
