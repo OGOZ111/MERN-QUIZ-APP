@@ -27,7 +27,7 @@ export const usePublishResult = async (resultData) => {
     }
 
     await postServerData(
-      `${process.env.REACT_APP_SERVER_HOSTNAME}/api/result`,
+      `${process.env.REACT_APP_API_URL}/api/result`,
       resultData
     );
   } catch (error) {
