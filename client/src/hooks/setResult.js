@@ -1,4 +1,5 @@
 import * as Action from "../redux/result_reducer";
+import { postServerData } from "../helper/helper";
 
 export const PushAnswer = (result) => async (dispatch) => {
   try {
@@ -11,6 +12,24 @@ export const PushAnswer = (result) => async (dispatch) => {
 export const updateResult = (index) => async (dispatch) => {
   try {
     dispatch(Action.updateResultAction(index));
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+// Set data into MongoDB
+export const usePublishResult = async (resultData) => {
+  const { result, username } = resultData;
+
+  try {
+    if (result.length === 0 || !username) {
+      throw new Error("Couldn't get Result");
+    }
+
+    await postServerData(
+      `${process.env.REACT_APP_SERVER_HOSTNAME}/api/result`,
+      resultData
+    );
   } catch (error) {
     console.log(error);
   }

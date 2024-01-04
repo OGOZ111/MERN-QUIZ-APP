@@ -2,15 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 // Custom hook
-import { useFetchQuestion } from "../hooks/FetchQuestion";
+import { useFetchQestion } from "../hooks/FetchQuestion";
 import { updateResult } from "../hooks/setResult";
 
 export default function Questions({ onChecked }) {
   const [checked, setChecked] = useState(undefined);
   const { trace } = useSelector((state) => state.questions);
-  useSelector((state) => console.log(state));
+  // useSelector((state) => console.log(state));
   const result = useSelector((state) => state.result.result);
-  const [{ isLoading, apiData, serverError }] = useFetchQuestion();
+  const [{ isLoading, apiData, serverError }] = useFetchQestion();
 
   const questions = useSelector(
     (state) => state.questions.queue[state.questions.trace]
@@ -21,7 +21,7 @@ export default function Questions({ onChecked }) {
   //const trace = useSelector((state) => state.questions.trace);
 
   useEffect(() => {
-    console.log({ trace, checked });
+    //console.log({ trace, checked });
     dispatch(updateResult({ trace, checked }));
     //console.log(questions);
     //console.log(trace);
@@ -38,7 +38,9 @@ export default function Questions({ onChecked }) {
 
   if (isLoading) return <h3 className="text-light">isLoading</h3>;
   if (serverError)
-    return <h3 className="text-light">{serverError || "Unknown Error"}</h3>;
+    return (
+      <h3 className="text-light">{serverError.message || "Unknown Error"}</h3>
+    );
 
   return (
     <div className="questions">

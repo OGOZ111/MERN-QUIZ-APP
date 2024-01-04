@@ -1,24 +1,58 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { getServerData } from "../helper/helper";
 
 export const ResultTable = () => {
+  const [data, setData] = useState([]);
+  const [refreshData, setRefreshData] = useState();
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const result = await getServerData(`http://localhost:5000/api/result`);
+        setData(result);
+        handleRefresh();
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+
+    // Reset the refreshData state after fetching data
+    setRefreshData(true);
+  }, [refreshData]);
+
+  const handleRefresh = () => {
+    // Set refreshData to true to trigger a re-fetch of data
+    setRefreshData(true);
+  };
+
   return (
     <div>
       <table>
         <thead className="table-header">
           <tr className="table-row">
             <td>Name</td>
-            <td>Attempts</td>
-            <td>Earn Points</td>
+            <td>Answered</td>
+            <td>Total Points</td>
             <td>Result</td>
           </tr>
         </thead>
         <tbody>
-          <tr className="table-body">
-            <td>Luke</td>
-            <td>03</td>
-            <td>20</td>
-            <td>Passed</td>
-          </tr>
+          {data.length === 0 ? (
+            <tr>
+              <td colSpan="4">No Data Found</td>
+            </tr>
+          ) : (
+            data.map((v, i) => (
+              <tr className="table-body" key={i}>
+                <td>{v?.username || ""}</td>
+                <td>{v?.attempts || 0}</td>
+                <td>{v?.points || 0}</td>
+                <td>{v?.achieved || ""}</td>
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
     </div>

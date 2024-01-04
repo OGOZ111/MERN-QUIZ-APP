@@ -9,6 +9,7 @@ import { resetAllAction } from "../redux/question_reducer";
 import { resetResultAction } from "../redux/result_reducer";
 import { attempts_Number } from "../helper/helper";
 import { earnPoints_Number, flagResult } from "../helper/helper";
+import { usePublishResult } from "../hooks/setResult";
 
 export const Result = () => {
   const dispatch = useDispatch();
@@ -17,16 +18,22 @@ export const Result = () => {
     result: { result, userId },
   } = useSelector((state) => state);
 
-  useEffect(() => {
-    //console.log(flag);
-  });
+  // All user result data, stored in variables for later
 
   const totalPoints = queue.length * 10;
-
   const attempts = attempts_Number(result);
-
   const earnPoints = earnPoints_Number(result, answers, 10);
   const flag = flagResult(totalPoints, earnPoints);
+
+  // store user result
+
+  usePublishResult({
+    result,
+    username: userId,
+    attempts,
+    points: earnPoints,
+    achieved: flag ? "Passed" : "Failed",
+  });
 
   function onRestart() {
     dispatch(resetAllAction());
@@ -43,7 +50,7 @@ export const Result = () => {
           <span className="bold">{userId || ""}</span>
         </div>
         <div className="flex">
-          <span>Total Quiz Points: </span>
+          <span>Max possible points: </span>
           <span className="bold">{totalPoints || 0}</span>
         </div>
         <div className="flex">
@@ -51,11 +58,11 @@ export const Result = () => {
           <span className="bold">{queue.length || 0}</span>
         </div>
         <div className="flex">
-          <span>Total attempts: </span>
+          <span>Total Answered: </span>
           <span className="bold">{attempts || 0}</span>
         </div>
         <div className="flex">
-          <span>Total Earned Points:</span>
+          <span>Total Points:</span>
           <span className="bold">{earnPoints || 0}</span>
         </div>
         <div className="flex">
