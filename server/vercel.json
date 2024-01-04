@@ -8,7 +8,11 @@
   ],
   "routes": [
     {
-      "src": "/api/(.*)",
+      "src": "/api/questions",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/api/result",
       "dest": "/server.js"
     },
     {
