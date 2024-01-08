@@ -25,24 +25,37 @@
 
 table {
   width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
 }
 
 .table-header {
-  color: #cecece;
-  font-size: 1.1em;
+  color: #ffffff;
+  font-size: 1.2em;
   text-align: center;
-  background: #212121;
-  padding: 18px 0;
+  background: #333;
+  padding: 15px 0;
+  border-bottom: 2px solid #ffffff;
 }
 
 .table-body {
-  font-size: 1.1em;
+  font-size: 1em;
   text-align: center;
-  /* color: #cecece; */
-  background: #d8d8d8;
-  padding: 18px 0;
+  background: #1a1a1a;
+  color: #ffffff;
+  padding: 12px 0;
 }
 
-.table-header > tr > td {
-  border: 1px solid #faff5a;
+.table-header th,
+.table-body td {
+  border: 1px solid #555;
+  padding: 8px;
+}
+
+.table-body tr:nth-child(even) {
+  background-color: #333;
+}
+
+.table-body tr:hover {
+  background-color: #555;
 }

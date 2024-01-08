@@ -20,7 +20,7 @@ export default function Quiz() {
 
   //Button event handler for next and prev buttons
   function onNext() {
-    console.log("button working");
+    //console.log("button working");
     if (trace < queue.length) {
       // Update the trace value by +1, which moves to the next index in the array of questions using move next action
       dispatch(MoveNextQuestion());

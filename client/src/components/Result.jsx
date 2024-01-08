@@ -38,7 +38,7 @@ export const Result = () => {
   function onRestart() {
     dispatch(resetAllAction());
     dispatch(resetResultAction());
-    console.log("restarted");
+    //console.log("restarted");
   }
   return (
     <div className="container">

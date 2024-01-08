@@ -2,8 +2,8 @@ export default [
   {
     id: 1,
     question:
-      "Which Function is used to serialize an object into a JSON string?",
-    options: ["stringify()", "parse()", "convert()"],
+      "Which function is used to serialize an object into a JSON string?",
+    options: ["bonkify()", "parse()", "convert()"],
   },
 
   {

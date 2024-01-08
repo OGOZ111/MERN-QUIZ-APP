@@ -8,7 +8,9 @@ export const ResultTable = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const result = await getServerData(`http://localhost:5000/api/result`);
+        const result = await getServerData(
+          `https://quizserver-s3a8.onrender.com/api/result`
+        );
         setData(result);
         handleRefresh();
       } catch (error) {

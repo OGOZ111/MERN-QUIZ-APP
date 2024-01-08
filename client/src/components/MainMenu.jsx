@@ -42,6 +42,11 @@ export const MainMenu = () => {
           Start Quiz
         </Link>
       </div>
+      <div className="start">
+        <Link className="btn" to={"leaderboard"}>
+          Scoreboard
+        </Link>
+      </div>
     </div>
   );
 };

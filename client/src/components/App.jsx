@@ -6,6 +6,7 @@ import { MainMenu } from "./MainMenu";
 import Quiz from "./Quiz";
 import { Result } from "./Result";
 import { CheckUserExist } from "../helper/helper";
+import { Leaderboard } from "./Leaderboard";
 
 //React Routes
 const router = createBrowserRouter([
@@ -28,6 +29,10 @@ const router = createBrowserRouter([
         <Result />
       </CheckUserExist>
     ),
+  },
+  {
+    path: "/leaderboard",
+    element: <Leaderboard />,
   },
 ]);
 

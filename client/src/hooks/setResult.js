@@ -26,10 +26,7 @@ export const usePublishResult = async (resultData) => {
       throw new Error("Couldn't get Result");
     }
 
-    await postServerData(
-      `${process.env.REACT_APP_API_URL}/api/result`,
-      resultData
-    );
+    await postServerData(`${REACT_APP_API_URL}/api/result`, resultData);
   } catch (error) {
     console.log(error);
   }
