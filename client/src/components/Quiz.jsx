@@ -39,7 +39,7 @@ export default function Quiz() {
     if (trace > 0) {
       dispatch(MovePrevQuestion());
     }
-    console.log("button working");
+    //console.log("button working");
   }
 
   function onChecked(check) {

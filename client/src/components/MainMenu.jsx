@@ -17,16 +17,22 @@ export const MainMenu = () => {
 
   return (
     <div className="container">
-      <h1 className="title text-light">Quiz App</h1>
+      <h1 className="title text-light">Finnish Trivia App</h1>
 
       <ol>
-        <li>You will be asked 10 questions one after another.</li>
-        <li>10 points is awarded for the correct answer.</li>
+        <li>Total of 10 questions</li>
+        <li>Every correct answer is worth 10 points</li>
         <li>
-          Each question has three options. You can choose only one options.
+          Each question has multiple options. You can choose only one option.
         </li>
-        <li>You can review and change answers before the quiz finish.</li>
-        <li>The result will be declared at the end of the quiz.</li>
+        <li>Questions begin easy, and get progressively more difficult</li>
+        <li>
+          You can return to any previous questions and change your answers
+        </li>
+        <li>
+          At the end of the quiz, you'll receive a passed or failed result. Your
+          username and score are logged to the Scoreboard
+        </li>
       </ol>
       <form id="form">
         <input
