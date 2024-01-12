@@ -31,7 +31,7 @@ export const ResultTable = () => {
   };
 
   return (
-    <div>
+    <div className="tablecont">
       <table>
         <thead className="table-header">
           <tr className="table-row">

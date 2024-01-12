@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 :root {
-  --primary-color: #db6f27;
-  --dark-color: #222222;
+  --primary-color: #262797;
+  --dark-color: #221f1f;
   --light-color: #f0f0f0;
 }
 
 body,
 html {
   height: 100%;
-  background: var(--dark-color);
+  background: url("background3.jpg") center/cover fixed;
 }
 
 * > * {
@@ -23,12 +23,29 @@ html {
   height: auto;
   width: 800px;
   padding: 20px;
+
+  background: rgba(255, 255, 255, 0.103);
+  border-radius: 10px;
+  padding: 20px;
+  backdrop-filter: blur(5px);
+}
+
+.containerres {
+  display: block;
+  position: relative;
+  margin: 40px auto;
+  height: auto;
+  width: 800px;
+  padding: 20px;
+  border-radius: 10px;
+  padding: 20px;
 }
 
 .container .title {
   font-size: 3em;
   text-align: center;
   border: 5px solid var(--primary-color);
+  border-radius: 10px;
   padding: 0.3em 0.2em;
   border-radius: 4px;
 }
@@ -47,14 +64,6 @@ html {
 .container .questions {
   padding: 3em;
 }
-
-/* 
-.container .questions .qid{
-  padding: .2em .7em;
-  color: #222222;
-  background-color: #0DFF92;
-  border-radius: 50px;
-} */
 
 .container .grid {
   margin-top: 3em;
@@ -86,7 +95,8 @@ html {
 }
 
 ul li {
-  color: #aaaaaa;
+  color: #000000;
+  font-size: larger;
   display: block;
   position: relative;
   float: left;

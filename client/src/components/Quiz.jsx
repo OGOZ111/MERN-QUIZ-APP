@@ -45,9 +45,13 @@ export default function Quiz() {
   if (result.length && result.length >= queue.length) {
     return <Navigate to={"/result"} replace="true"></Navigate>;
   }
+
+  // Insert the trace value into the JSX to display the current question number, +1 bc index starts at 0
   return (
     <div className="container">
-      <h1 className="title text-light">Quiz App</h1>
+      <h1 className="title text-light">
+        Question {trace + 1} of {queue.length}
+      </h1>
 
       {/*display question*/}
       <Questions onChecked={onChecked} />

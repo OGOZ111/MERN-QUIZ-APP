@@ -20,7 +20,7 @@ export const useFetchQestion = () => {
     /** async function fetch backend data */
     (async () => {
       try {
-        const [{ questions, answers }] = getServerData(
+        const [{ questions, answers }] = await getServerData(
           `${process.env.REACT_APP_SERVER_HOSTNAME}/api/questions`,
           (data) => data
         );

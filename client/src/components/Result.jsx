@@ -41,7 +41,7 @@ export const Result = () => {
   }
   return (
     <div className="container">
-      <h1 className="title text-light">Quiz App</h1>
+      <h1 className="title text-light">Results</h1>
 
       <div className="result flex-center">
         <div className="flex">
@@ -79,7 +79,7 @@ export const Result = () => {
           Restart
         </Link>
       </div>
-      <div className="container">
+      <div className="containerres">
         {/**Result table from back end */}
         <ResultTable />
       </div>

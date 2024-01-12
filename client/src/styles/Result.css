@@ -23,6 +23,13 @@
   color: #2aff95;
 }
 
+.tablecont {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+  margin-right: 40px;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
