@@ -8,7 +8,7 @@ import { Result } from "./Result";
 import { CheckUserExist } from "../helper/helper";
 import { Leaderboard } from "./Leaderboard";
 
-//React Routes
+//React Routes. Protected routes are wrapped with CheckUserExist component
 const router = createBrowserRouter([
   {
     path: "/",

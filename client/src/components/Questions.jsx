@@ -18,24 +18,18 @@ export default function Questions({ onChecked }) {
 
   const dispatch = useDispatch();
 
-  //const trace = useSelector((state) => state.questions.trace);
-
   useEffect(() => {
-    //console.log({ trace, checked });
     dispatch(updateResult({ trace, checked }));
-    //console.log(questions);
-    //console.log(trace);
-    //console.log(isLoading);
-    // console.log(apiData);
-    //console.log(serverError);
   }, [checked]);
 
+  // Runs function when user selects an answer, or goes back and changes an answer, and dispatches the result to the redux store
   function onSelect(i) {
     onChecked(i);
     setChecked(i);
     dispatch(updateResult({ trace, checked }));
   }
 
+  // display loading message while fetching data from server
   if (isLoading) return <h3 className="text-light">isLoading</h3>;
   if (serverError)
     return (

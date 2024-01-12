@@ -14,13 +14,8 @@ export default function Quiz() {
   const { queue, trace } = useSelector((state) => state.questions);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    //console.log(state);
-  });
-
-  //Button event handler for next and prev buttons
+  //Button event handler for next  button
   function onNext() {
-    //console.log("button working");
     if (trace < queue.length) {
       // Update the trace value by +1, which moves to the next index in the array of questions using move next action
       dispatch(MoveNextQuestion());
@@ -35,11 +30,11 @@ export default function Quiz() {
     setChecked(undefined);
   }
 
+  // Button event handler for  prev buttons that returns to the previous question in the array.
   function onPrev() {
     if (trace > 0) {
-      dispatch(MovePrevQuestion());
+      dispatch(MovePrevQuestion()); // moves to the previous question in the array
     }
-    //console.log("button working");
   }
 
   function onChecked(check) {

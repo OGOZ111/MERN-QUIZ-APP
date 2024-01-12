@@ -6,9 +6,6 @@ import * as controller from "../controllers/controller.js";
 
 // Questions Routes API
 
-//router.get("/questions", controller.getQuestions);
-//router.post("/questions", controller.insertQuestions);
-
 // routing for questions and answers, API endpoints
 router
   .route("/questions")

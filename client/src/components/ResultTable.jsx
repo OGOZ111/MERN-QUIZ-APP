@@ -5,6 +5,7 @@ export const ResultTable = () => {
   const [data, setData] = useState([]);
   const [refreshData, setRefreshData] = useState();
 
+  //Retrieve data from the server to display in table
   useEffect(() => {
     const fetchData = async () => {
       try {

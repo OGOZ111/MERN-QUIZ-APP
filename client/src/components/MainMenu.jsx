@@ -9,6 +9,7 @@ export const MainMenu = () => {
 
   const dispatch = useDispatch();
 
+  // Checks if there is user input in the name inut field and dispatches the user id to the redux store
   function startQuiz() {
     if (inputRef.current?.value) {
       dispatch(setUserId(inputRef.current?.value));
