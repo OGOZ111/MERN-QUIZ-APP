@@ -1,5 +1,6 @@
 import "../styles/App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Snowfall from "react-snowfall";
 
 // Import components
 import { MainMenu } from "./MainMenu";
@@ -39,6 +40,13 @@ const router = createBrowserRouter([
 function App() {
   return (
     <>
+      <Snowfall
+        style={{
+          position: "fixed",
+          width: "100vw",
+          height: "100vh",
+        }}
+      />
       <RouterProvider router={router} />
     </>
   );
