@@ -10,8 +10,12 @@
 MongoDB, ExpressJS, ReactJS, NodeJS.
 
 I wanted to build a fullstack app outside of my school projects to learn and practice some new techniques of the front and back end development.
-The app is a trivia game based on Finnish history.
-App is now hosted live here --> https://papaya-zabaione-964ffa.netlify.app
+Techniques in React such as redux, dispatch, using a trace, custom hooks to fetch and set data, comparing an array of questions with the answers, how to go backwards and change a checked reponse, how to process an empty response, how to use a flag result and log database results and usernames for a leadboard.
+
+Backend was fun to use create working API, routing, controllers, create schemas, thunder client to check requests. I later hosted the back end through Render service, and the front end on Netlify.
+
+The trivia game based on Finnish history, but with this knowledge I can now use on submission forms, surveys, feedback forms, questionaires, personality tests and diagonosis apps.
+App is now hosted live here --> https://finnish-trivia.netlify.app/
 
 ## Table of Contents
 

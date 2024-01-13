@@ -1,9 +1,13 @@
 export default [
   {
     id: 1,
-    question:
-      "In addition to Finnish, Swedish, and Norwegian, what is the fourth official language of Finland?",
-    options: ["Icelandic", "Danish", "Russian", "Sami"],
+    question: "What is the national dish of Finland?",
+    options: [
+      "Karelian pasty (Karjalanpiirakka)",
+      "Lohikeitto (Salmon soup)",
+      "Hernekeitto (Pea soup)",
+      "Poronkäristys (Sautéed reindeer)",
+    ],
   },
 
   {

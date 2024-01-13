@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Grow from "@mui/material/Grow";
 import Zoom from "@mui/material/Zoom";
+// Custom hooks
 import { useFetchQestion } from "../hooks/FetchQuestion";
 import { updateResult } from "../hooks/setResult";
 
@@ -22,11 +23,15 @@ export default function Questions({ onChecked }) {
     dispatch(updateResult({ trace, checked }));
   }, [checked]);
 
+  // Runs function when user selects an answer, or goes back and changes an answer, and dispatches the result to the redux store
+
   function onSelect(i) {
     onChecked(i);
     setChecked(i);
     dispatch(updateResult({ trace, checked }));
   }
+
+  // display loading message while fetching data from server
 
   if (isLoading) return <h3 className="text-light">isLoading</h3>;
   if (serverError)
