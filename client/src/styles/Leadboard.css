@@ -7,3 +7,9 @@
   text-decoration: none;
   background-color: #faff5a;
 }
+
+.btn:hover {
+  cursor: pointer;
+  background-color: #f0f0f0;
+  color: #202020;
+}
