@@ -1,8 +1,5 @@
 # Mern Stack Quiz App
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/8adbbef6-e285-43da-ace3-7d692f725111/deploy-status)](https://app.netlify.com/sites/finnish-trivia/deploys)
-
-
 [![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 [![React](https://img.shields.io/badge/React-61DAFB?logo=react&logoColor=white)](https://reactjs.org/)
 [![Node.js](https://img.shields.io/badge/Node.js-339933?logo=node.js&logoColor=white)](https://nodejs.org/)
